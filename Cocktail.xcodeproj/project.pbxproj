@@ -13,6 +13,8 @@
 		EC4DDC1C21F70733007EDEEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4DDC1A21F70733007EDEEA /* Main.storyboard */; };
 		EC4DDC1E21F70733007EDEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4DDC1D21F70733007EDEEA /* Assets.xcassets */; };
 		EC4DDC2121F70733007EDEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4DDC1F21F70733007EDEEA /* LaunchScreen.storyboard */; };
+		EC6D029D21F7574600A622AF /* DetailsCocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */; };
+		EC6D029F21F75AA200A622AF /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		EC4DDC1D21F70733007EDEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC4DDC2021F70733007EDEEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC4DDC2221F70733007EDEEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCocktailViewController.swift; sourceTree = "<group>"; };
+		EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +82,14 @@
 		EC4DDC1521F70733007EDEEA /* Cocktail */ = {
 			isa = PBXGroup;
 			children = (
+				EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */,
 				EC4DDC1621F70733007EDEEA /* AppDelegate.swift */,
 				EC4DDC1821F70733007EDEEA /* ViewController.swift */,
 				EC4DDC1A21F70733007EDEEA /* Main.storyboard */,
 				EC4DDC1D21F70733007EDEEA /* Assets.xcassets */,
 				EC4DDC1F21F70733007EDEEA /* LaunchScreen.storyboard */,
 				EC4DDC2221F70733007EDEEA /* Info.plist */,
+				EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */,
 			);
 			path = Cocktail;
 			sourceTree = "<group>";
@@ -163,15 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
@@ -185,15 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Cocktail-checkManifestLockResult.txt",
 			);
@@ -209,7 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6D029F21F75AA200A622AF /* IngredientTableViewCell.swift in Sources */,
 				EC4DDC1921F70733007EDEEA /* ViewController.swift in Sources */,
+				EC6D029D21F7574600A622AF /* DetailsCocktailViewController.swift in Sources */,
 				EC4DDC1721F70733007EDEEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

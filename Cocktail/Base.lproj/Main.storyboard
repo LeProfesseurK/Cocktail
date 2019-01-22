@@ -146,28 +146,31 @@
             </objects>
             <point key="canvasLocation" x="1008.8" y="117.39130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--Details Cocktail View Controller-->
         <scene sceneID="x1p-8T-Lgi">
             <objects>
-                <viewController id="AGk-Ct-LSk" sceneMemberID="viewController">
+                <viewController id="AGk-Ct-LSk" customClass="DetailsCocktailViewController" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OND-pQ-MEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-Pc-0sg">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-Pc-0sg">
                                 <rect key="frame" x="123.5" y="77" width="128" height="30"/>
                                 <state key="normal" title="Ajouter aux favoris"/>
+                                <connections>
+                                    <action selector="ajouterAuxFavoris:" destination="AGk-Ct-LSk" eventType="touchUpInside" id="frg-mE-Kkp"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-mX-cFC">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-mX-cFC">
                                 <rect key="frame" x="160" y="112" width="210" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom Cocktail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efH-zF-euN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nom Cocktail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efH-zF-euN">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Description ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8J-OL-SGK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Description ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8J-OL-SGK">
                                         <rect key="frame" x="0.0" y="20.5" width="210" height="99.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -175,14 +178,14 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-m5-oQR">
-                                <rect key="frame" x="0.0" y="243" width="375" height="424"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-m5-oQR">
+                                <rect key="frame" x="0.0" y="357" width="375" height="310"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="424" id="caT-fG-ZJB"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M0I-V4-1xV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M0I-V4-1xV" customClass="IngredientTableViewCell" customModule="Cocktail" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M0I-V4-1xV" id="5pc-42-gZP">
@@ -198,10 +201,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientMesure" destination="ok2-AH-pDa" id="HN2-sL-zin"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj9-WH-cZh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj9-WH-cZh">
                                 <rect key="frame" x="15" y="115" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="STC-Mc-VFu"/>
@@ -210,25 +216,44 @@
                                     <constraint firstAttribute="width" secondItem="kj9-WH-cZh" secondAttribute="height" multiplier="1:1" id="jjV-Pc-w3B"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b9c-uq-L9y">
+                                <rect key="frame" x="0.0" y="237" width="375" height="131"/>
+                                <string key="text">Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v9b-E4-PS9" firstAttribute="trailing" secondItem="okZ-mX-cFC" secondAttribute="trailing" constant="5" id="0Gq-Zq-mbe"/>
+                            <constraint firstItem="v9b-E4-PS9" firstAttribute="trailing" secondItem="b9c-uq-L9y" secondAttribute="trailing" id="2w6-sk-mlp"/>
+                            <constraint firstItem="b9c-uq-L9y" firstAttribute="top" secondItem="okZ-mX-cFC" secondAttribute="bottom" constant="5" id="7fr-iF-nvc"/>
                             <constraint firstItem="okZ-mX-cFC" firstAttribute="leading" secondItem="kj9-WH-cZh" secondAttribute="trailing" constant="24" id="Ehq-Dk-rBi"/>
                             <constraint firstItem="4gs-m5-oQR" firstAttribute="bottom" secondItem="v9b-E4-PS9" secondAttribute="bottom" id="FOk-GJ-Ysv"/>
-                            <constraint firstItem="4gs-m5-oQR" firstAttribute="top" secondItem="okZ-mX-cFC" secondAttribute="bottom" constant="11" id="I2x-co-gNI"/>
                             <constraint firstItem="cPe-Pc-0sg" firstAttribute="top" secondItem="v9b-E4-PS9" secondAttribute="top" constant="13" id="SOk-NQ-JlX"/>
                             <constraint firstItem="4gs-m5-oQR" firstAttribute="bottom" secondItem="v9b-E4-PS9" secondAttribute="bottom" id="UWx-Rf-EDD"/>
                             <constraint firstItem="kj9-WH-cZh" firstAttribute="leading" secondItem="v9b-E4-PS9" secondAttribute="leading" constant="16" id="Vze-6x-pz2"/>
                             <constraint firstItem="okZ-mX-cFC" firstAttribute="height" secondItem="kj9-WH-cZh" secondAttribute="height" id="Yuh-DN-buO"/>
                             <constraint firstItem="okZ-mX-cFC" firstAttribute="top" secondItem="cPe-Pc-0sg" secondAttribute="bottom" constant="5" id="Zme-ma-o9p"/>
+                            <constraint firstItem="b9c-uq-L9y" firstAttribute="leading" secondItem="v9b-E4-PS9" secondAttribute="leading" id="hM0-XZ-tWW"/>
                             <constraint firstItem="cPe-Pc-0sg" firstAttribute="centerX" secondItem="v9b-E4-PS9" secondAttribute="centerX" id="iTf-Yo-nDT"/>
+                            <constraint firstItem="4gs-m5-oQR" firstAttribute="top" secondItem="b9c-uq-L9y" secondAttribute="bottom" constant="20" id="mzQ-XM-UKa"/>
                             <constraint firstItem="4gs-m5-oQR" firstAttribute="leading" secondItem="v9b-E4-PS9" secondAttribute="leading" id="uSw-4i-UoH"/>
                             <constraint firstItem="kj9-WH-cZh" firstAttribute="top" secondItem="cPe-Pc-0sg" secondAttribute="bottom" constant="5" id="w4c-Ke-UCb"/>
                             <constraint firstItem="4gs-m5-oQR" firstAttribute="trailing" secondItem="v9b-E4-PS9" secondAttribute="trailing" id="yxZ-wO-kS1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v9b-E4-PS9"/>
                     </view>
+                    <connections>
+                        <outlet property="boutonAjoutFavoris" destination="cPe-Pc-0sg" id="v4f-5I-IYA"/>
+                        <outlet property="description" destination="I8J-OL-SGK" id="9mH-12-Kar"/>
+                        <outlet property="descriptionCocktail" destination="I8J-OL-SGK" id="Niq-6d-UOS"/>
+                        <outlet property="imageDuCocktails" destination="kj9-WH-cZh" id="n2o-jl-E9y"/>
+                        <outlet property="instructionCocktail" destination="b9c-uq-L9y" id="gA1-Rh-eya"/>
+                        <outlet property="nomCocktail" destination="I8J-OL-SGK" id="0HO-Wm-7yW"/>
+                        <outlet property="tableIngredient" destination="4gs-m5-oQR" id="0pW-9p-a6K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGK-8K-8Fv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
