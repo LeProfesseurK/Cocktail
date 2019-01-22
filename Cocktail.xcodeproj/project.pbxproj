@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27D004D362E45BDEDE43CEE5 /* Pods_Cocktail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3501C3AB8EB4142739930AD6 /* Pods_Cocktail.framework */; };
 		EC4DDC1721F70733007EDEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4DDC1621F70733007EDEEA /* AppDelegate.swift */; };
 		EC4DDC1921F70733007EDEEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4DDC1821F70733007EDEEA /* ViewController.swift */; };
 		EC4DDC1C21F70733007EDEEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4DDC1A21F70733007EDEEA /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E3DAF6F0B3D20B129DD9611 /* Pods-Cocktail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail.release.xcconfig"; sourceTree = "<group>"; };
+		3501C3AB8EB4142739930AD6 /* Pods_Cocktail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocktail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98AF3DD95B772C1AFE1E6DD /* Pods-Cocktail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail.debug.xcconfig"; sourceTree = "<group>"; };
 		EC4DDC1321F70733007EDEEA /* Cocktail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocktail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4DDC1621F70733007EDEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4DDC1821F70733007EDEEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D004D362E45BDEDE43CEE5 /* Pods_Cocktail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CC7855F40307437753CBE95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D98AF3DD95B772C1AFE1E6DD /* Pods-Cocktail.debug.xcconfig */,
+				0E3DAF6F0B3D20B129DD9611 /* Pods-Cocktail.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E37A90897168ED2983B0A9BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3501C3AB8EB4142739930AD6 /* Pods_Cocktail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC4DDC0A21F70733007EDEEA = {
 			isa = PBXGroup;
 			children = (
 				EC4DDC1521F70733007EDEEA /* Cocktail */,
 				EC4DDC1421F70733007EDEEA /* Products */,
+				3CC7855F40307437753CBE95 /* Pods */,
+				E37A90897168ED2983B0A9BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC4DDC2521F70733007EDEEA /* Build configuration list for PBXNativeTarget "Cocktail" */;
 			buildPhases = (
+				B876FDC5AA50978AEA8A0796 /* [CP] Check Pods Manifest.lock */,
 				EC4DDC0F21F70733007EDEEA /* Sources */,
 				EC4DDC1021F70733007EDEEA /* Frameworks */,
 				EC4DDC1121F70733007EDEEA /* Resources */,
+				63DBB890934490B13B90811D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63DBB890934490B13B90811D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B876FDC5AA50978AEA8A0796 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cocktail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC4DDC0F21F70733007EDEEA /* Sources */ = {
@@ -272,6 +345,7 @@
 		};
 		EC4DDC2621F70733007EDEEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D98AF3DD95B772C1AFE1E6DD /* Pods-Cocktail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +360,7 @@
 		};
 		EC4DDC2721F70733007EDEEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E3DAF6F0B3D20B129DD9611 /* Pods-Cocktail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
