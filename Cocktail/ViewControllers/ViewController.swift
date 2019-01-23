@@ -40,10 +40,12 @@ class ViewController: UIViewController {
                         
                         if ((sender as! UIButton) == boutonRechercher) {
                             destinationResultatRechercheVC.type = ResultatType.fromSearch
-                            destinationResultatRechercheVC.prefilledString = "megumin recherche"
+                            //destinationResultatRechercheVC.prefilledString = "megumin recherche"
+                            destinationResultatRechercheVC.prefilledString = "Tu as chercher " + (rechercheTextField.text ?? "")
+
                         }else if ((sender as! UIButton) == boutonFavoris) {
                             destinationResultatRechercheVC.type = ResultatType.fromFavorites
-                            destinationResultatRechercheVC.prefilledString = "megumin favoris"
+                            destinationResultatRechercheVC.prefilledString = "Mes cocktails favoris !"
                         }
                     }
                 break
