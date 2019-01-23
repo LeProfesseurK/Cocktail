@@ -26,16 +26,23 @@ class ResultatRechercheViewController: UIViewController {
         super.viewDidLoad()
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
-        getMovies()
+        
+        getMovies(prefilledString: prefilledString ?? "")
+        //print (prefilledString)
     }
     
-    private func getMovies() {
-        APICocktail.getResult {[weak self] (result) in
+    private func getMovies(prefilledString:String) {
+        APICocktail.getResult(laRecherche: prefilledString) {[weak self] (result) in
             switch result {
             case .success(let value):
                 do {
                     let decoder = JSONDecoder()
                     let response: CocktailResponse = try decoder.decode(CocktailResponse.self, from: value)
+                    if let cocktails = response.cocktails {
+                        self?.listOfCocktails = cocktails
+                        self?.tableResultatRecherche.reloadData()
+                    }
+                    
                     print (response.cocktails?.first?.strDrink ?? "")
                 }
                 catch (let error){
@@ -51,7 +58,7 @@ class ResultatRechercheViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let prefilledStringLet = prefilledString {
-            titrePage.text = prefilledStringLet
+            titrePage.text = "Tu as cherché "+prefilledStringLet
         }
     }
     
@@ -65,7 +72,7 @@ class ResultatRechercheViewController: UIViewController {
 }
 
 extension ResultatRechercheViewController : UITableViewDelegate {
-    
+
 }
 
 extension ResultatRechercheViewController : UITableViewDataSource {
@@ -75,14 +82,10 @@ extension ResultatRechercheViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ResultatTableViewCell = tableResultatRecherche.dequeueReusableCell(withIdentifier: "cocktailResultID", for: indexPath)  as! ResultatTableViewCell
+        cell.remplirCellule(avecCocktail: listOfCocktails[indexPath.row])
         //cell.remplirCellule(withString: listOfCocktails[indexPath.row]., withString: listOfCocktails[indexPath.row]))
         return cell
     }
-    
+     
     
 }
-
-
-
-
-

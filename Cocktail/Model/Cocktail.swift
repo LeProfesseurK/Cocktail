@@ -20,12 +20,14 @@ class Cocktail: Codable {
     
     let idDrink: String?
     let strDrink: String?
+    let strDrinkThumb: String?
 }
 
 extension Cocktail {
     enum CodingKeys: String, CodingKey {
         case idDrink = "idDrink"
         case strDrink = "strDrink"
+        case strDrinkThumb = "strDrinkThumb"
         //        case ingredientsDrink
     }
 }

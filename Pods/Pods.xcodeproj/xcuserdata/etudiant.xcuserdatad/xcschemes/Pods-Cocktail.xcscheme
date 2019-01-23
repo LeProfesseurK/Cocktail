@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA7BEFDB2FCA6B4F6FB7CD2F9D4FC868"
+               BlueprintIdentifier = "7D3C285132C11FB2688CF4662D84C32A"
                BuildableName = "Pods_Cocktail.framework"
                BlueprintName = "Pods-Cocktail"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA7BEFDB2FCA6B4F6FB7CD2F9D4FC868"
+            BlueprintIdentifier = "7D3C285132C11FB2688CF4662D84C32A"
             BuildableName = "Pods_Cocktail.framework"
             BlueprintName = "Pods-Cocktail"
             ReferencedContainer = "container:Pods.xcodeproj">

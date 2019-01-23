@@ -10,9 +10,10 @@ import Foundation
 import Alamofire
 
 class  APICocktail {
-    static func getResult(completion:@escaping (Result<Data>)->Void)
+    static func getResult(laRecherche: String, completion:@escaping (Result<Data>)->Void)
     {
-        Alamofire.request("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+        let parametre: Parameters = ["s":laRecherche]
+        Alamofire.request("https://www.thecocktaildb.com/api/json/v1/1/search.php", parameters: parametre)
             .responseData{ (response: DataResponse<Data>) in completion(response.result)
         }
     }

@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class ResultatTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var imageCocktail: UIView!
+    @IBOutlet weak var imageCocktail: UIImageView!
     @IBOutlet weak var nomCocktail: UILabel!
     
     override func awakeFromNib() {
@@ -24,9 +25,10 @@ class ResultatTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func remplirCellule(withString nom:String, withString image:String){
-        nomCocktail.text = nom
-        // imageCocktail
+    
+    func remplirCellule(avecCocktail cocktail:Cocktail) {
+        nomCocktail.text = cocktail.strDrink
+        //imageCocktail = cocktail.strDrinkThumb
     }
     
 }
