@@ -35,36 +35,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Saisir votre recherche" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-26-WSK">
-                                <rect key="frame" x="0.0" y="134" width="375" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="62.5" y="145" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.86413131476683935" green="0.86413131476683935" blue="0.86413131476683935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="DfX-oh-OXs"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-Hl-kM8">
-                                <rect key="frame" x="155.5" y="185" width="64" height="30"/>
+                                <rect key="frame" x="125" y="225" width="125" height="30"/>
+                                <color key="backgroundColor" red="0.86266916990280151" green="0.8627936840057373" blue="0.86264199018478394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="dU9-qh-cE3"/>
+                                </constraints>
+                                <color key="tintColor" red="0.49019607840000001" green="0.0" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Chercher"/>
                                 <connections>
                                     <action selector="onClickBoutonRecherche:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlL-q4-OAy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygq-fG-UUN">
-                                <rect key="frame" x="50" y="617" width="275" height="30"/>
+                                <rect key="frame" x="125" y="617" width="125" height="30"/>
+                                <color key="backgroundColor" red="0.86266916990280151" green="0.8627936840057373" blue="0.86264199018478394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="S7J-Xo-pOv"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.8627936840057373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Mes favoris"/>
                                 <connections>
                                     <action selector="onClickBoutonFavoris:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yc3-xH-Lb8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViNiKi Cocktails" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWb-8x-c9f">
+                                <rect key="frame" x="87.5" y="84" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GBc-QV-su5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.85064392174123171" green="0.56951474471830987" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="FRi-a3-Y7U">
+                                <rect key="frame" x="67.5" y="355" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FRi-a3-Y7U" secondAttribute="height" multiplier="15:8" id="EcV-5x-bqg"/>
+                                    <constraint firstAttribute="width" constant="240" id="hD8-LZ-iUG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6cQ-26-WSK" secondAttribute="trailing" id="4kk-sU-uS1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ygq-fG-UUN" secondAttribute="trailing" constant="50" id="6bh-dL-FOu"/>
-                            <constraint firstItem="6cQ-26-WSK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B6X-Oz-Gx4"/>
-                            <constraint firstItem="OyV-Hl-kM8" firstAttribute="top" secondItem="6cQ-26-WSK" secondAttribute="bottom" constant="21" id="Cmx-YT-TdM"/>
-                            <constraint firstItem="ygq-fG-UUN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ncg-Nm-TtG"/>
+                            <constraint firstItem="sWb-8x-c9f" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="43w-n1-uge"/>
+                            <constraint firstItem="OyV-Hl-kM8" firstAttribute="top" secondItem="6cQ-26-WSK" secondAttribute="bottom" constant="50" id="Cmx-YT-TdM"/>
+                            <constraint firstItem="FRi-a3-Y7U" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DkX-ac-FJb"/>
+                            <constraint firstItem="ygq-fG-UUN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FvE-sH-GIH"/>
+                            <constraint firstItem="sWb-8x-c9f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kP7-Zp-LJj"/>
+                            <constraint firstItem="6cQ-26-WSK" firstAttribute="top" secondItem="sWb-8x-c9f" secondAttribute="bottom" constant="40" id="p2n-jd-BwW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ygq-fG-UUN" secondAttribute="bottom" constant="20" id="sGC-nw-iyz"/>
-                            <constraint firstItem="6cQ-26-WSK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="v18-YI-TfO"/>
+                            <constraint firstItem="FRi-a3-Y7U" firstAttribute="top" secondItem="OyV-Hl-kM8" secondAttribute="bottom" constant="100" id="tRv-OZ-Grr"/>
+                            <constraint firstItem="6cQ-26-WSK" firstAttribute="leading" secondItem="sWb-8x-c9f" secondAttribute="trailing" constant="-225" id="vRY-3z-vkp"/>
                             <constraint firstItem="OyV-Hl-kM8" firstAttribute="centerX" secondItem="6cQ-26-WSK" secondAttribute="centerX" id="yK6-XM-ydV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -269,4 +301,7 @@
             <point key="canvasLocation" x="1884" y="117.39130434782609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cocktail" width="960" height="640"/>
+    </resources>
 </document>
