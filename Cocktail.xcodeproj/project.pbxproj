@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		27D004D362E45BDEDE43CEE5 /* Pods_Cocktail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3501C3AB8EB4142739930AD6 /* Pods_Cocktail.framework */; };
+		EC47D4AA21F85C8900604897 /* ResultatRechercheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47D4A921F85C8900604897 /* ResultatRechercheViewController.swift */; };
+		EC47D4AC21F85CF600604897 /* ResultatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47D4AB21F85CF600604897 /* ResultatTableViewCell.swift */; };
+		EC47D4AE21F85D1B00604897 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47D4AD21F85D1B00604897 /* Cocktail.swift */; };
 		EC4DDC1721F70733007EDEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4DDC1621F70733007EDEEA /* AppDelegate.swift */; };
 		EC4DDC1921F70733007EDEEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4DDC1821F70733007EDEEA /* ViewController.swift */; };
 		EC4DDC1C21F70733007EDEEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4DDC1A21F70733007EDEEA /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 		0E3DAF6F0B3D20B129DD9611 /* Pods-Cocktail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail.release.xcconfig"; sourceTree = "<group>"; };
 		3501C3AB8EB4142739930AD6 /* Pods_Cocktail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocktail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98AF3DD95B772C1AFE1E6DD /* Pods-Cocktail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cocktail/Pods-Cocktail.debug.xcconfig"; sourceTree = "<group>"; };
+		EC47D4A921F85C8900604897 /* ResultatRechercheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultatRechercheViewController.swift; sourceTree = "<group>"; };
+		EC47D4AB21F85CF600604897 /* ResultatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultatTableViewCell.swift; sourceTree = "<group>"; };
+		EC47D4AD21F85D1B00604897 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		EC4DDC1321F70733007EDEEA /* Cocktail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocktail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4DDC1621F70733007EDEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4DDC1821F70733007EDEEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +67,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC47D4B121F85F0B00604897 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */,
+				EC47D4A921F85C8900604897 /* ResultatRechercheViewController.swift */,
+				EC4DDC1821F70733007EDEEA /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EC47D4B221F85F7E00604897 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */,
+				EC47D4AB21F85CF600604897 /* ResultatTableViewCell.swift */,
+			);
+			path = TableViewControllers;
+			sourceTree = "<group>";
+		};
+		EC47D4B321F85FA400604897 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC47D4AD21F85D1B00604897 /* Cocktail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EC4DDC0A21F70733007EDEEA = {
 			isa = PBXGroup;
 			children = (
@@ -82,14 +115,14 @@
 		EC4DDC1521F70733007EDEEA /* Cocktail */ = {
 			isa = PBXGroup;
 			children = (
-				EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */,
+				EC47D4B321F85FA400604897 /* Model */,
+				EC47D4B221F85F7E00604897 /* TableViewControllers */,
+				EC47D4B121F85F0B00604897 /* ViewControllers */,
 				EC4DDC1621F70733007EDEEA /* AppDelegate.swift */,
-				EC4DDC1821F70733007EDEEA /* ViewController.swift */,
 				EC4DDC1A21F70733007EDEEA /* Main.storyboard */,
 				EC4DDC1D21F70733007EDEEA /* Assets.xcassets */,
 				EC4DDC1F21F70733007EDEEA /* LaunchScreen.storyboard */,
 				EC4DDC2221F70733007EDEEA /* Info.plist */,
-				EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */,
 			);
 			path = Cocktail;
 			sourceTree = "<group>";
@@ -207,10 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC47D4AE21F85D1B00604897 /* Cocktail.swift in Sources */,
+				EC47D4AA21F85C8900604897 /* ResultatRechercheViewController.swift in Sources */,
 				EC6D029F21F75AA200A622AF /* IngredientTableViewCell.swift in Sources */,
 				EC4DDC1921F70733007EDEEA /* ViewController.swift in Sources */,
 				EC6D029D21F7574600A622AF /* DetailsCocktailViewController.swift in Sources */,
 				EC4DDC1721F70733007EDEEA /* AppDelegate.swift in Sources */,
+				EC47D4AC21F85CF600604897 /* ResultatTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

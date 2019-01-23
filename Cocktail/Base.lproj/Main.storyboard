@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Resultat Recherche View Controller-->
         <scene sceneID="R0e-Fw-AHQ">
             <objects>
-                <viewController id="yuO-s5-pNb" sceneMemberID="viewController">
+                <viewController id="yuO-s5-pNb" customClass="ResultatRechercheViewController" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3zi-ri-4qL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,24 +95,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46X-Do-j80">
-                                                    <rect key="frame" x="15" y="0.0" width="40" height="40"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="46X-Do-j80">
+                                                    <rect key="frame" x="10" y="0.0" width="43.5" height="43.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="46X-Do-j80" secondAttribute="height" multiplier="1:1" id="N2e-sP-m4V"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nom cocktail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3w-7b-vmY">
-                                                    <rect key="frame" x="63" y="0.0" width="292" height="32"/>
+                                                    <rect key="frame" x="61" y="11" width="312" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="r3w-7b-vmY" secondAttribute="trailing" constant="5" id="AFj-Wd-dnl"/>
-                                                <constraint firstItem="46X-Do-j80" firstAttribute="leading" secondItem="YvO-hJ-xml" secondAttribute="leadingMargin" constant="5" id="IOW-2E-u3V"/>
+                                                <constraint firstItem="46X-Do-j80" firstAttribute="top" secondItem="YvO-hJ-xml" secondAttribute="top" id="7va-aS-v1A"/>
+                                                <constraint firstItem="r3w-7b-vmY" firstAttribute="centerY" secondItem="YvO-hJ-xml" secondAttribute="centerY" id="Qvr-DS-hOi"/>
+                                                <constraint firstItem="r3w-7b-vmY" firstAttribute="leading" secondItem="46X-Do-j80" secondAttribute="trailing" constant="7.5" id="VsL-8U-9Gr"/>
                                                 <constraint firstItem="46X-Do-j80" firstAttribute="centerY" secondItem="YvO-hJ-xml" secondAttribute="centerY" id="YYy-w6-6Ci"/>
-                                                <constraint firstItem="r3w-7b-vmY" firstAttribute="centerY" secondItem="YvO-hJ-xml" secondAttribute="centerY" id="oAZ-wg-oCv"/>
+                                                <constraint firstItem="46X-Do-j80" firstAttribute="leading" secondItem="YvO-hJ-xml" secondAttribute="leading" constant="10" id="bmY-KX-u3m"/>
+                                                <constraint firstItem="46X-Do-j80" firstAttribute="centerY" secondItem="YvO-hJ-xml" secondAttribute="centerY" id="d0Y-Ta-cxn"/>
+                                                <constraint firstItem="46X-Do-j80" firstAttribute="centerY" secondItem="YvO-hJ-xml" secondAttribute="centerY" id="hQ0-BO-ug5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -139,6 +141,8 @@
                         <viewLayoutGuide key="safeArea" id="VfR-fT-wqQ"/>
                     </view>
                     <connections>
+                        <outlet property="tableResultatRecherche" destination="62c-wd-5hg" id="XWG-Kg-1bZ"/>
+                        <outlet property="titrePage" destination="VzW-f1-cGi" id="F90-NU-k8z"/>
                         <segue destination="AGk-Ct-LSk" kind="show" identifier="goDetails" id="9ly-bj-Tgk"/>
                     </connections>
                 </viewController>
