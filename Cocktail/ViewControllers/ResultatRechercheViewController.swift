@@ -8,18 +8,32 @@
 
 import UIKit
 
+enum ResultatType {
+    case fromSearch
+    case fromFavorites
+}
+
 class ResultatRechercheViewController: UIViewController {
     
     @IBOutlet weak var titrePage: UILabel!
     @IBOutlet weak var tableResultatRecherche: UITableView!
     var listOfCocktails: [Cocktail] = []
     var recherche: String = ""
+    var prefilledString: String?
+    var type: ResultatType = ResultatType.fromSearch
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let prefilledStringLet = prefilledString {
+            titrePage.text = prefilledStringLet
+        }
     }
     
     override func didReceiveMemoryWarning() {

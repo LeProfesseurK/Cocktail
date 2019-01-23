@@ -35,15 +35,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-26-WSK">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Saisir votre recherche" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-26-WSK">
                                 <rect key="frame" x="0.0" y="134" width="375" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-Hl-kM8">
-                                <rect key="frame" x="150" y="141" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-Hl-kM8">
+                                <rect key="frame" x="155.5" y="185" width="64" height="30"/>
                                 <state key="normal" title="Chercher"/>
+                                <connections>
+                                    <action selector="onClickBoutonRecherche:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlL-q4-OAy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygq-fG-UUN">
                                 <rect key="frame" x="50" y="617" width="275" height="30"/>
@@ -53,7 +57,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6cQ-26-WSK" secondAttribute="trailing" id="4kk-sU-uS1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ygq-fG-UUN" secondAttribute="trailing" constant="50" id="6bh-dL-FOu"/>
@@ -69,6 +73,8 @@
                     <navigationItem key="navigationItem" id="HHt-n3-FKu"/>
                     <connections>
                         <outlet property="boutonFavoris" destination="ygq-fG-UUN" id="k2u-yl-d6h"/>
+                        <outlet property="boutonRechercher" destination="OyV-Hl-kM8" id="WFB-vu-bGH"/>
+                        <outlet property="rechercheTextField" destination="6cQ-26-WSK" id="3OI-Sx-MJp"/>
                         <segue destination="yuO-s5-pNb" kind="show" identifier="goSearch" id="8gy-7k-I5q"/>
                     </connections>
                 </viewController>
