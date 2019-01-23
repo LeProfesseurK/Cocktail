@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var rechercheTextField: UITextField!
     @IBOutlet weak var boutonRechercher: UIButton!
     
-    
     @IBAction func onClickBoutonRecherche(_ sender: Any) {
        self.performSegue(withIdentifier: "goListDrink", sender: boutonRechercher)
     }
@@ -41,7 +40,7 @@ class ViewController: UIViewController {
                         if ((sender as! UIButton) == boutonRechercher) {
                             destinationResultatRechercheVC.type = ResultatType.fromSearch
                             //destinationResultatRechercheVC.prefilledString = "megumin recherche"
-                            destinationResultatRechercheVC.prefilledString = "Tu as chercher " + (rechercheTextField.text ?? "")
+                            destinationResultatRechercheVC.prefilledString = "Tu as cherché " + (rechercheTextField.text ?? "")
 
                         }else if ((sender as! UIButton) == boutonFavoris) {
                             destinationResultatRechercheVC.type = ResultatType.fromFavorites
