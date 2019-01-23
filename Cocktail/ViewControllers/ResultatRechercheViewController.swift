@@ -26,7 +26,26 @@ class ResultatRechercheViewController: UIViewController {
         super.viewDidLoad()
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
-        
+        getMovies()
+    }
+    
+    private func getMovies() {
+        APICocktail.getResult {[weak self] (result) in
+            switch result {
+            case .success(let value):
+                do {
+                    let decoder = JSONDecoder()
+                    let response: CocktailResponse = try decoder.decode(CocktailResponse.self, from: value)
+                    print (response.cocktails?.first?.strDrink ?? "")
+                }
+                catch (let error){
+                    print (error.localizedDescription)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

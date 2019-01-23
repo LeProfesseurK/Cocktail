@@ -18,6 +18,7 @@
 		EC4DDC2121F70733007EDEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4DDC1F21F70733007EDEEA /* LaunchScreen.storyboard */; };
 		EC6D029D21F7574600A622AF /* DetailsCocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */; };
 		EC6D029F21F75AA200A622AF /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */; };
+		EC701CC221F8973500AD2BF1 /* APICocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC701CC121F8973500AD2BF1 /* APICocktail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EC4DDC2221F70733007EDEEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC6D029C21F7574600A622AF /* DetailsCocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCocktailViewController.swift; sourceTree = "<group>"; };
 		EC6D029E21F75AA200A622AF /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		EC701CC121F8973500AD2BF1 /* APICocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICocktail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		EC4DDC1521F70733007EDEEA /* Cocktail */ = {
 			isa = PBXGroup;
 			children = (
+				EC701CC021F896DD00AD2BF1 /* API */,
 				EC47D4B321F85FA400604897 /* Model */,
 				EC47D4B221F85F7E00604897 /* TableViewControllers */,
 				EC47D4B121F85F0B00604897 /* ViewControllers */,
@@ -125,6 +128,14 @@
 				EC4DDC2221F70733007EDEEA /* Info.plist */,
 			);
 			path = Cocktail;
+			sourceTree = "<group>";
+		};
+		EC701CC021F896DD00AD2BF1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EC701CC121F8973500AD2BF1 /* APICocktail.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 				EC47D4AE21F85D1B00604897 /* Cocktail.swift in Sources */,
 				EC47D4AA21F85C8900604897 /* ResultatRechercheViewController.swift in Sources */,
 				EC6D029F21F75AA200A622AF /* IngredientTableViewCell.swift in Sources */,
+				EC701CC221F8973500AD2BF1 /* APICocktail.swift in Sources */,
 				EC4DDC1921F70733007EDEEA /* ViewController.swift in Sources */,
 				EC6D029D21F7574600A622AF /* DetailsCocktailViewController.swift in Sources */,
 				EC4DDC1721F70733007EDEEA /* AppDelegate.swift in Sources */,
