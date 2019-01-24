@@ -28,22 +28,12 @@ class ResultatRechercheViewController: UIViewController {
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
         
-        if let prefilledStringLet = prefilledString {
-            switch type{
-            case ResultatType.fromFavorites:
-//                getMesFavoris()
-            break
-            case ResultatType.fromSearch:
-                getCocktails(prefilledString: prefilledString ?? "")
-            break
-            }
-            
-        }
+        getCocktails(prefilledString: prefilledString ?? "")
         //print (prefilledString)
     }
     
     private func getCocktails(prefilledString:String) {
-        APICocktail.getResult(laRecherche: prefilledString) {[weak self] (result) in
+        APICocktail.getCocktailByName(laRecherche: prefilledString) {[weak self] (result) in
             switch result {
             case .success(let value):
                 do {
