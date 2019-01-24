@@ -42,10 +42,29 @@ class DetailsCocktailViewController: UIViewController {
     */
 
     @IBAction func ajouterAuxFavoris(_ sender: Any) {
+        var tabCocktailsFavorie : [Cocktail] = []
+        print("ok1")
+        let decoder = JSONDecoder()
+        if let unCocktail = UserDefaults.standard.data(forKey: "Cocktails_Favoris"),
+            let cocktails = try? decoder.decode([Cocktail].self, from: unCocktail) {
+            
+            tabCocktailsFavorie = cocktails ?? []
+            print(tabCocktailsFavorie.count)
+        }
+        print("ok2")
+        if let nouveauCocktail = detailsCocktail{
+            print(nouveauCocktail.strDrink)
+            if !tabCocktailsFavorie.contains(where: {$0.idDrink == nouveauCocktail.idDrink}){
+                tabCocktailsFavorie.append(nouveauCocktail)
+            }
+            print(tabCocktailsFavorie.count)
+        }
+        print("ok3")
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(detailsCocktail) {
+        if let encoded = try? encoder.encode(tabCocktailsFavorie) {
             UserDefaults.standard.set(encoded, forKey: "Cocktails_Favoris")
         }
+        print("ok4")
     }
     
     override func viewWillAppear(_ animated: Bool) {
