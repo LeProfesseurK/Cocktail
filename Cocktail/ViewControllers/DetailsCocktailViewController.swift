@@ -52,7 +52,10 @@ class DetailsCocktailViewController: UIViewController {
         super.viewWillAppear(animated)
         print(detailsCocktail?.strDrink)
 
-//        nomCocktail.text = 
+        nomCocktail.text = detailsCocktail?.strDrink
+        let url = URL(string: detailsCocktail?.strDrinkThumb ?? "")
+        //        imageCocktail.kf.setImage(with: url)
+        imageDuCocktails.sd_setImage(with: url)
         
     }
 }
