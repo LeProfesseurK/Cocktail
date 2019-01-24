@@ -7,5 +7,6 @@ target 'Cocktail' do
 
   # Pods for Cocktail
   pod 'Alamofire', '~> 4.7'
-  pod 'Kingfisher', '~>5.1.0'
+  # pod 'Kingfisher', '~>5.1.0'
+  pod 'SDWebImage/WebP'
 end

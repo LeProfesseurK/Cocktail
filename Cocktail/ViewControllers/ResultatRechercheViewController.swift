@@ -21,17 +21,26 @@ class ResultatRechercheViewController: UIViewController {
     var recherche: String = ""
     var prefilledString: String?
     var type: ResultatType = ResultatType.fromSearch
+    var position: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
         
-        getMovies(prefilledString: prefilledString ?? "")
+        if let prefilledStringLet = prefilledString {
+            switch type{
+            case ResultatType.fromFavorites:
+//                getMesFavoris()
+            case ResultatType.fromSearch:
+                getCocktails(prefilledString: prefilledString ?? "")
+            }
+            
+        }
         //print (prefilledString)
     }
     
-    private func getMovies(prefilledString:String) {
+    private func getCocktails(prefilledString:String) {
         APICocktail.getResult(laRecherche: prefilledString) {[weak self] (result) in
             switch result {
             case .success(let value):
@@ -58,7 +67,13 @@ class ResultatRechercheViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let prefilledStringLet = prefilledString {
-            titrePage.text = "Tu as cherché "+prefilledStringLet
+            switch type{
+                case ResultatType.fromFavorites:
+                    titrePage.text = prefilledStringLet
+                case ResultatType.fromSearch:
+                    titrePage.text = "Tu as cherché "+prefilledStringLet
+            }
+            
         }
     }
     
@@ -93,7 +108,22 @@ extension ResultatRechercheViewController : UITableViewDataSource {
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "goDetails", sender: nil)
-
+        position = indexPath.row
         print ( listOfCocktails[indexPath.row].idDrink ?? "")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier{
+            switch identifier{
+            case "goDetails":
+                if let destinationResultatRechercheVC = segue.destination as?
+                    DetailsCocktailViewController{
+                    destinationResultatRechercheVC.detailsCocktail = listOfCocktails[position]
+                    }
+                break
+            default:
+                break
+            }
+        }
     }
 }
