@@ -80,7 +80,7 @@ class DetailsCocktailViewController: UIViewController {
         //        imageCocktail.kf.setImage(with: url)
         imageDuCocktails.sd_setImage(with: url)
         typeVerre.text = "Type de verre : "+(detailsCocktail?.strGlass ?? "")
-        alchool.text = " Alchool : "+(detailsCocktail?.strAlcoholic ?? "")
+        alchool.text = " Alcool : "+(detailsCocktail?.strAlcoholic ?? "")
         category.text = " Catégorie : "+(detailsCocktail?.strCategory ?? "")
         instructionCocktail.text = detailsCocktail?.strInstructions
         
