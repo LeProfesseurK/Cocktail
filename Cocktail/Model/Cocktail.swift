@@ -56,6 +56,118 @@ class Cocktail: Codable {
     let strMeasure13: String?
     let strMeasure14: String?
     let strMeasure15: String?
+    
+    func  tableauIngredient() -> [String]{
+        var tabIngredient:[String]=[]
+        var ingMes : String = ""
+        if let ingredient1 = strIngredient1, !ingredient1.isEmpty{
+            ingMes = ingredient1
+            if let mesure1 = strMeasure1, !mesure1.isEmpty{
+                ingMes += " : " + mesure1
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient2 = strIngredient2, !ingredient2.isEmpty{
+            ingMes = ingredient2
+            if let mesure2 = strMeasure2, !mesure2.isEmpty{
+                ingMes += " : " + mesure2
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient3 = strIngredient3, !ingredient3.isEmpty{
+            ingMes = ingredient3
+            if let mesure3 = strMeasure3, !mesure3.isEmpty{
+                ingMes += " : " + mesure3
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient4 = strIngredient4, !ingredient4.isEmpty{
+            ingMes = ingredient4
+            if let mesure4 = strMeasure4, !mesure4.isEmpty{
+                ingMes += " : " + mesure4
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient5 = strIngredient5, !ingredient5.isEmpty{
+            ingMes = ingredient5
+            if let mesure5 = strMeasure5, !mesure5.isEmpty{
+                ingMes += " : " + mesure5
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient6 = strIngredient6, !ingredient6.isEmpty{
+            ingMes = ingredient6
+            if let mesure6 = strMeasure6, !mesure6.isEmpty{
+                ingMes += " : " + mesure6
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient7 = strIngredient7, !ingredient7.isEmpty{
+            ingMes = ingredient7
+            if let mesure7 = strMeasure7, !mesure7.isEmpty{
+                ingMes += " : " + mesure7
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient8 = strIngredient8, !ingredient8.isEmpty{
+            ingMes = ingredient8
+            if let mesure8 = strMeasure8, !mesure8.isEmpty{
+                ingMes += " : " + mesure8
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient9 = strIngredient9, !ingredient9.isEmpty{
+            ingMes = ingredient9
+            if let mesure9 = strMeasure9, !mesure9.isEmpty{
+                ingMes += " : " + mesure9
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient10 = strIngredient10, !ingredient10.isEmpty{
+            ingMes = ingredient10
+            if let mesure10 = strMeasure10, !mesure10.isEmpty{
+                ingMes += " : " + mesure10
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient11 = strIngredient11, !ingredient11.isEmpty{
+            ingMes = ingredient11
+            if let mesure11 = strMeasure11, !mesure11.isEmpty{
+                ingMes += " : " + mesure11
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient12 = strIngredient12, !ingredient12.isEmpty{
+            ingMes = ingredient12
+            if let mesure12 = strMeasure12, !mesure12.isEmpty{
+                ingMes += " : " + mesure12
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient13 = strIngredient13, !ingredient13.isEmpty{
+            ingMes = ingredient13
+            if let mesure13 = strMeasure13, !mesure13.isEmpty{
+                ingMes += " : " + mesure13
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient14 = strIngredient14, !ingredient14.isEmpty{
+            ingMes = ingredient14
+            if let mesure14 = strMeasure14, !mesure14.isEmpty{
+                ingMes += " : " + mesure14
+            }
+            tabIngredient.append(ingMes)
+        }
+        if let ingredient15 = strIngredient15, !ingredient15.isEmpty{
+            ingMes = ingredient15
+            if let mesure15 = strMeasure15, !mesure15.isEmpty{
+                ingMes += " : " + mesure15
+            }
+            tabIngredient.append(ingMes)
+        }
+        
+        return tabIngredient
+    }
 }
 
 extension Cocktail {
@@ -100,5 +212,3 @@ extension Cocktail {
         case strMeasure15
     }
 }
-
-

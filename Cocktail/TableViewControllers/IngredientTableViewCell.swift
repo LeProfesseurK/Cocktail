@@ -23,11 +23,11 @@ class IngredientTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    /*
-    func remplirCellule(avecCocktail cocktail:Cocktail) {
-        ingredientMesure.text = cocktail.strDrink
+    
+    func remplirCellule(avecIngredientMesure ingreMes : String) {
+        ingredientMesure.text = ingreMes
  
-    }*/
+    }
     /*
 	"idDrink":"15997"
     "strDrink":"GG"

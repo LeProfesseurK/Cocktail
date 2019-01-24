@@ -139,10 +139,7 @@ class ResultatRechercheViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
 }
-
 
 extension ResultatRechercheViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -167,7 +164,7 @@ extension ResultatRechercheViewController : UITableViewDataSource {
         position = indexPath.row
         
         self.performSegue(withIdentifier: "goDetails", sender: nil)
-
+        
         print ( listOfCocktails[indexPath.row].idDrink ?? "")
     }
     
