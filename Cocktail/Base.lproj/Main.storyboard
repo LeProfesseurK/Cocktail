@@ -200,7 +200,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-Pc-0sg">
-                                <rect key="frame" x="123.5" y="77" width="128" height="30"/>
+                                <rect key="frame" x="123.5" y="77" width="128" height="15"/>
+                                <color key="backgroundColor" red="0.86413131480000005" green="0.86413131480000005" blue="0.86413131480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="Ajouter aux favoris"/>
                                 <connections>
                                     <action selector="ajouterAuxFavoris:" destination="AGk-Ct-LSk" eventType="touchUpInside" id="frg-mE-Kkp"/>
