@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Kingfisher
-
+//import Kingfisher
+import SDWebImage
 
 class ResultatTableViewCell: UITableViewCell {
     
@@ -30,7 +30,8 @@ class ResultatTableViewCell: UITableViewCell {
     func remplirCellule(avecCocktail cocktail:Cocktail) {
         nomCocktail.text = cocktail.strDrink
         let url = URL(string: cocktail.strDrinkThumb ?? "")
-        imageCocktail.kf.setImage(with: url)
+//        imageCocktail.kf.setImage(with: url)
+        imageCocktail.sd_setImage(with: url)
     }
     
 }

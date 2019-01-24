@@ -1,20 +1,49 @@
 PODS:
   - Alamofire (4.8.1)
-  - Kingfisher (5.1.0)
+  - libwebp (0.6.1):
+    - libwebp/core (= 0.6.1)
+    - libwebp/dec (= 0.6.1)
+    - libwebp/demux (= 0.6.1)
+    - libwebp/dsp (= 0.6.1)
+    - libwebp/enc (= 0.6.1)
+    - libwebp/mux (= 0.6.1)
+    - libwebp/utils (= 0.6.1)
+    - libwebp/webp (= 0.6.1)
+  - libwebp/core (0.6.1):
+    - libwebp/webp
+  - libwebp/dec (0.6.1):
+    - libwebp/core
+  - libwebp/demux (0.6.1):
+    - libwebp/core
+  - libwebp/dsp (0.6.1):
+    - libwebp/core
+  - libwebp/enc (0.6.1):
+    - libwebp/core
+  - libwebp/mux (0.6.1):
+    - libwebp/core
+  - libwebp/utils (0.6.1):
+    - libwebp/core
+  - libwebp/webp (0.6.1)
+  - SDWebImage/Core (4.4.3)
+  - SDWebImage/WebP (4.4.3):
+    - libwebp (~> 0.5)
+    - SDWebImage/Core
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
-  - Kingfisher (~> 5.1.0)
+  - SDWebImage/WebP
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Kingfisher
+    - libwebp
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
+  libwebp: 0f01098c6c17175391af621b2f14150f3ca16e16
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 3b041f52b1a4d72b0b220f23f43259a8a4df33c0
+PODFILE CHECKSUM: 5a4dd4e867d71440fa73b552d025fef8e92d2131
 
 COCOAPODS: 1.5.3
