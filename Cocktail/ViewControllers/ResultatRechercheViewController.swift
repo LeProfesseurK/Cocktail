@@ -28,8 +28,42 @@ class ResultatRechercheViewController: UIViewController {
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
         
-        getCocktails(prefilledString: prefilledString ?? "")
-        //print (prefilledString)
+        if let prefilledStringLet = prefilledString{prefilledStringLet
+            switch type{
+                case ResultatType.fromSearch :
+                    getCocktails(prefilledString: prefilledString ?? "")
+                    //print (prefilledString)
+                    break
+                case ResultatType.fromFavorites :
+                    print("voir favorie 1")
+//                    var tabCocktail: [Cocktail] = []
+                    let decoder = JSONDecoder()
+                    if let unCocktail1 = UserDefaults.standard.data(forKey: "Cocktails_Favoris"){
+                    print(unCocktail1)
+            }
+                    if let unCocktail = UserDefaults.standard.data(forKey: "Cocktails_Favoris"),
+                    let cocktails = try? decoder.decode([Cocktail].self, from: unCocktail){
+                        print("Voir mes favorie")
+//                        print(cocktail.strDrink)
+//                        print(cocktail.idDrink)
+//                        tabCocktail.append(cocktail)
+                        self.listOfCocktails = cocktails ?? []
+                        self.tableResultatRecherche.reloadData()
+                    break
+                    }
+                    
+                    
+                    break
+            }
+            
+            
+        }
+        
+        
+        
+        
+        
+        
     }
     
     private func getCocktails(prefilledString:String) {

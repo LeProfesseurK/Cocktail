@@ -77,8 +77,18 @@
                                 <color key="textColor" red="0.85064392174123171" green="0.56951474471830987" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="FRi-a3-Y7U">
-                                <rect key="frame" x="67.5" y="355" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1x-uV-0J5">
+                                <rect key="frame" x="106" y="287" width="163" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Chercher par ingredient"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKJ-op-Ezi">
+                                <rect key="frame" x="113" y="341" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voir un alcool random"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="FRi-a3-Y7U">
+                                <rect key="frame" x="67" y="401" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FRi-a3-Y7U" secondAttribute="height" multiplier="15:8" id="EcV-5x-bqg"/>
                                     <constraint firstAttribute="width" constant="240" id="hD8-LZ-iUG"/>
