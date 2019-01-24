@@ -75,11 +75,11 @@ class DetailsCocktailViewController: UIViewController {
         super.viewWillAppear(animated)
         print(detailsCocktail?.strDrink)
 
-        nomCocktail.text = "Nom du cocktail : "+(detailsCocktail?.strDrink ?? "")
+        nomCocktail.text = "Nom : "+(detailsCocktail?.strDrink ?? "")
         let url = URL(string: detailsCocktail?.strDrinkThumb ?? "")
         //        imageCocktail.kf.setImage(with: url)
         imageDuCocktails.sd_setImage(with: url)
-        typeVerre.text = "Type de verre : "+(detailsCocktail?.strGlass ?? "")
+        typeVerre.text = "Verre : "+(detailsCocktail?.strGlass ?? "")
         alchool.text = " Alcool : "+(detailsCocktail?.strAlcoholic ?? "")
         category.text = " Catégorie : "+(detailsCocktail?.strCategory ?? "")
         instructionCocktail.text = detailsCocktail?.strInstructions
