@@ -23,6 +23,8 @@ class DetailsCocktailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableIngredient.delegate = self 
+        tableIngredient.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -66,20 +68,33 @@ class DetailsCocktailViewController: UIViewController {
     }
 }
 
-//extension DetailsCocktailViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 
-//    }
-//    
-//    // Tableau ingredient
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//}
-
 extension DetailsCocktailViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 44
     }
 }
+
+extension DetailsCocktailViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print ("avant if")
+        if let monCocktail = detailsCocktail{
+            print (monCocktail.tableauIngredient().count)
+            return monCocktail.tableauIngredient().count
+        }
+        return 0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var tableauIngredientMesure : [String] = []
+        if let monCocktail = detailsCocktail{
+            tableauIngredientMesure = monCocktail.tableauIngredient()
+        }
+        let cell: IngredientTableViewCell = tableIngredient.dequeueReusableCell(withIdentifier: "mesureIngredient", for: indexPath)  as! IngredientTableViewCell
+            cell.remplirCellule(avecIngredientMesure : tableauIngredientMesure[indexPath.row])
+            //cell.remplirCellule(withString: listOfCocktails[indexPath.row]., withString: listOfCocktails[indexPath.row]))
+        print ("-----"+tableauIngredientMesure[indexPath.row])
+            return cell
+    }
+}
+
