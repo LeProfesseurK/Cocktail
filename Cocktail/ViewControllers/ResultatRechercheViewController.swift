@@ -93,7 +93,6 @@ extension ResultatRechercheViewController : UITableViewDataSource {
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "goDetails", sender: nil)
-
         print ( listOfCocktails[indexPath.row].idDrink ?? "")
     }
 }

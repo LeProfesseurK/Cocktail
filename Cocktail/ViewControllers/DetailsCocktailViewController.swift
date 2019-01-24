@@ -17,6 +17,8 @@ class DetailsCocktailViewController: UIViewController {
     @IBOutlet weak var nomCocktail: UILabel!
     @IBOutlet weak var desc: UILabel!
     
+    var detailsCocktail:Cocktail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,5 +43,29 @@ class DetailsCocktailViewController: UIViewController {
     */
 
     @IBAction func ajouterAuxFavoris(_ sender: Any) {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        nomCocktail.text = 
+        
+    }
+}
+
+//extension DetailsCocktailViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 
+//    }
+//    
+//    // Tableau ingredient
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//}
+
+extension DetailsCocktailViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
