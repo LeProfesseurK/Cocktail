@@ -73,8 +73,8 @@ class DetailsCocktailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print ( "-Will appear-")
         print(detailsCocktail?.strDrink)
-
         nomCocktail.text = "Nom : "+(detailsCocktail?.strDrink ?? "")
         let url = URL(string: detailsCocktail?.strDrinkThumb ?? "")
         //        imageCocktail.kf.setImage(with: url)
@@ -85,6 +85,7 @@ class DetailsCocktailViewController: UIViewController {
         instructionCocktail.text = detailsCocktail?.strInstructions
         
     }
+    
 }
 
 extension DetailsCocktailViewController: UITableViewDelegate{

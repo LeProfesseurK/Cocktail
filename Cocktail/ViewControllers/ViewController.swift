@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var boutonFavoris: UIButton!
     @IBOutlet weak var rechercheTextField: UITextField!
     @IBOutlet weak var boutonRechercher: UIButton!
-    
+    var cocktailRand : Cocktail?
     @IBAction func onClickBoutonRecherche(_ sender: Any) {
        self.performSegue(withIdentifier: "goListDrink", sender: boutonRechercher)
     }
@@ -33,7 +33,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onClickRandom(_ sender: Any) {
-        self.performSegue(withIdentifier: "goRandom", sender: boutonRandom)
+        APICocktail.getCocktailRandom() {[weak self] (result) in
+            switch result {
+            case .success(let value):
+                do {
+                    let decoder = JSONDecoder()
+                    let response: CocktailResponse = try decoder.decode(CocktailResponse.self, from: value)
+                    if let cocktails = response.cocktails {
+                        print ( "- prepare in VC-")
+                        print(cocktails.first?.strDrink)
+                        print ("--")
+                        self?.cocktailRand = cocktails.first
+                        self?.performSegue(withIdentifier: "goRandom", sender: self?.boutonRandom)
+                    }
+                    
+                }
+                catch (let error){
+                    print (error.localizedDescription)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,8 +75,6 @@ class ViewController: UIViewController {
                             destinationResultatRechercheVC.type = ResultatType.fromSearch
                             //destinationResultatRechercheVC.prefilledString = "megumin recherche"
                             destinationResultatRechercheVC.prefilledString = (rechercheTextField.text ?? "")
-                        
-                            
 
                         }else if ((sender as! UIButton) == boutonFavoris) {
                             destinationResultatRechercheVC.type = ResultatType.fromFavorites
@@ -65,12 +86,18 @@ class ViewController: UIViewController {
                         }
                     }
                 break
+            case "goRandom":
+                if let destinationResultatRandomVC = segue.destination as?
+                    DetailsCocktailViewController{
+                        destinationResultatRandomVC.detailsCocktail = cocktailRand
+                }
+                
+                break
             default:
                 break
             }
         }
     }
-
 
 }
 
