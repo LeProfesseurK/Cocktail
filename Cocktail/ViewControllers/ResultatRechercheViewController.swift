@@ -27,12 +27,12 @@ class ResultatRechercheViewController: UIViewController {
         tableResultatRecherche.delegate = self
         tableResultatRecherche.dataSource = self
         
-        getMovies(prefilledString: prefilledString ?? "")
+        getCocktail(prefilledString: prefilledString ?? "")
         //print (prefilledString)
     }
     
-    private func getMovies(prefilledString:String) {
-        APICocktail.getResult(laRecherche: prefilledString) {[weak self] (result) in
+    private func getCocktail(prefilledString:String) {
+        APICocktail.getCocktailByName(laRecherche: prefilledString) {[weak self] (result) in
             switch result {
             case .success(let value):
                 do {
