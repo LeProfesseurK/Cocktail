@@ -161,7 +161,7 @@ extension ResultatRechercheViewController : UITableViewDataSource {
     }
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if type == ResultatType.fromSearch{
+        if type == ResultatType.fromSearch || type == ResultatType.fromFavorites {
             position = indexPath.row
             
             self.performSegue(withIdentifier: "goDetails", sender: nil)
