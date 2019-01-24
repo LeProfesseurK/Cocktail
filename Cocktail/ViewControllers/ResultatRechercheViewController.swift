@@ -11,6 +11,7 @@ import UIKit
 enum ResultatType {
     case fromSearch
     case fromFavorites
+    case fromSearchIngredient
 }
 
 class ResultatRechercheViewController: UIViewController {
@@ -32,6 +33,10 @@ class ResultatRechercheViewController: UIViewController {
             switch type{
                 case ResultatType.fromSearch :
                     getCocktails(prefilledString: prefilledString ?? "")
+                    //print (prefilledString)
+                    break
+                case ResultatType.fromSearchIngredient :
+                    getCocktailsIngredient(prefilledString: prefilledString ?? "")
                     //print (prefilledString)
                     break
                 case ResultatType.fromFavorites :
@@ -66,6 +71,30 @@ class ResultatRechercheViewController: UIViewController {
         
     }
     
+    private func getCocktailsIngredient(prefilledString:String) {
+        APICocktail.getCocktailByIngredient(laRecherche: prefilledString) {[weak self] (result) in
+            switch result {
+            case .success(let value):
+                do {
+                    let decoder = JSONDecoder()
+                    let response: CocktailResponse = try decoder.decode(CocktailResponse.self, from: value)
+                    if let cocktails = response.cocktails {
+                        self?.listOfCocktails = cocktails
+                        self?.tableResultatRecherche.reloadData()
+                    }
+                    
+                    print (response.cocktails?.first?.strDrink ?? "")
+                }
+                catch (let error){
+                    print (error.localizedDescription)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     private func getCocktails(prefilledString:String) {
         APICocktail.getCocktailByName(laRecherche: prefilledString) {[weak self] (result) in
             switch result {
@@ -98,6 +127,8 @@ class ResultatRechercheViewController: UIViewController {
                     titrePage.text = prefilledStringLet
                 case ResultatType.fromSearch:
                     titrePage.text = "Tu as cherché "+prefilledStringLet
+                case ResultatType.fromSearchIngredient:
+                    titrePage.text = "Recherche par ingrdient : "+prefilledStringLet
             }
             
         }
