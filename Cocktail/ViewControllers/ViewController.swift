@@ -10,10 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var boutonRechercheIngredient: UIButton!
+    @IBOutlet weak var boutonRandom: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+
     @IBOutlet weak var boutonFavoris: UIButton!
     @IBOutlet weak var rechercheTextField: UITextField!
     @IBOutlet weak var boutonRechercher: UIButton!
@@ -23,6 +26,14 @@ class ViewController: UIViewController {
     }
     @IBAction func onClickBoutonFavoris(_ sender: Any) {
         self.performSegue(withIdentifier: "goListDrink", sender: boutonFavoris)
+    }
+    
+    @IBAction func onClickRechercheIngredient(_ sender: Any) {
+        self.performSegue(withIdentifier: "goListDrink", sender: boutonRechercheIngredient)
+    }
+    
+    @IBAction func onClickRandom(_ sender: Any) {
+        self.performSegue(withIdentifier: "goRandom", sender: boutonRandom)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,6 +58,10 @@ class ViewController: UIViewController {
                         }else if ((sender as! UIButton) == boutonFavoris) {
                             destinationResultatRechercheVC.type = ResultatType.fromFavorites
                             destinationResultatRechercheVC.prefilledString = "Mes cocktails favoris !"
+                        }else if ((sender as! UIButton) == boutonRechercheIngredient) {
+                            destinationResultatRechercheVC.type = ResultatType.fromSearchIngredient
+                            //destinationResultatRechercheVC.prefilledString = "megumin recherche"
+                            destinationResultatRechercheVC.prefilledString = (rechercheTextField.text ?? "")
                         }
                     }
                 break
