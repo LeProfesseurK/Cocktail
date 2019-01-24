@@ -132,7 +132,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="46X-Do-j80">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="46X-Do-j80">
                                                     <rect key="frame" x="10" y="0.0" width="43.5" height="43.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="46X-Do-j80" secondAttribute="height" multiplier="1:1" id="N2e-sP-m4V"/>
@@ -292,11 +292,10 @@
                     </view>
                     <connections>
                         <outlet property="boutonAjoutFavoris" destination="cPe-Pc-0sg" id="v4f-5I-IYA"/>
-                        <outlet property="description" destination="I8J-OL-SGK" id="9mH-12-Kar"/>
-                        <outlet property="descriptionCocktail" destination="I8J-OL-SGK" id="Niq-6d-UOS"/>
+                        <outlet property="desc" destination="I8J-OL-SGK" id="Mb3-aO-3lB"/>
                         <outlet property="imageDuCocktails" destination="kj9-WH-cZh" id="n2o-jl-E9y"/>
                         <outlet property="instructionCocktail" destination="b9c-uq-L9y" id="gA1-Rh-eya"/>
-                        <outlet property="nomCocktail" destination="I8J-OL-SGK" id="0HO-Wm-7yW"/>
+                        <outlet property="nomCocktail" destination="efH-zF-euN" id="VW7-cp-Dvo"/>
                         <outlet property="tableIngredient" destination="4gs-m5-oQR" id="0pW-9p-a6K"/>
                     </connections>
                 </viewController>

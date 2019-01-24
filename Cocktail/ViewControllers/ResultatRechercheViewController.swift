@@ -71,7 +71,11 @@ class ResultatRechercheViewController: UIViewController {
     
 }
 
+
 extension ResultatRechercheViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 43.5
+    }
 
 }
 
@@ -87,5 +91,9 @@ extension ResultatRechercheViewController : UITableViewDataSource {
         return cell
     }
      
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "goDetails", sender: nil)
+
+        print ( listOfCocktails[indexPath.row].idDrink ?? "")
+    }
 }

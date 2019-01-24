@@ -12,10 +12,10 @@ class DetailsCocktailViewController: UIViewController {
 
     @IBOutlet weak var boutonAjoutFavoris: UIButton!
     @IBOutlet weak var imageDuCocktails: UIImageView!
-    @IBOutlet weak var nomCocktail: UILabel!
-    @IBOutlet weak var descriptionCocktail: UILabel!
     @IBOutlet weak var tableIngredient: UITableView!
     @IBOutlet weak var instructionCocktail: UILabel!
+    @IBOutlet weak var nomCocktail: UILabel!
+    @IBOutlet weak var desc: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

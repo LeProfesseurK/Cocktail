@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 class ResultatTableViewCell: UITableViewCell {
@@ -28,7 +29,8 @@ class ResultatTableViewCell: UITableViewCell {
     
     func remplirCellule(avecCocktail cocktail:Cocktail) {
         nomCocktail.text = cocktail.strDrink
-        //imageCocktail = cocktail.strDrinkThumb
+        let url = URL(string: cocktail.strDrinkThumb ?? "")
+        imageCocktail.kf.setImage(with: url)
     }
     
 }
