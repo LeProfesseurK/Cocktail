@@ -32,6 +32,7 @@ class ResultatTableViewCell: UITableViewCell {
         let url = URL(string: cocktail.strDrinkThumb ?? "")
 //        imageCocktail.kf.setImage(with: url)
         imageCocktail.sd_setImage(with: url)
+        
     }
     
 }

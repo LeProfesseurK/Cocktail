@@ -25,6 +25,7 @@ class Cocktail: Codable {
     let strAlcoholic: String?
     let strGlass: String?
     let strDrinkThumb: String?
+    let strInstructions: String?
     let strIngredient1: String?
     let strIngredient2: String?
     let strIngredient3: String?
@@ -65,7 +66,8 @@ extension Cocktail {
         case strIBA
         case strAlcoholic
         case strGlass
-        case strDrinkThumb 
+        case strDrinkThumb
+        case strInstructions
         case strIngredient1
         case strIngredient2
         case strIngredient3
