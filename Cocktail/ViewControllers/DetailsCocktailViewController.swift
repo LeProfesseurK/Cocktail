@@ -42,6 +42,10 @@ class DetailsCocktailViewController: UIViewController {
     */
 
     @IBAction func ajouterAuxFavoris(_ sender: Any) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(detailsCocktail) {
+            UserDefaults.standard.set(encoded, forKey: "Cocktails_Favoris")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
