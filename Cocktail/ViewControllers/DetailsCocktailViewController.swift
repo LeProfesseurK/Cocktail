@@ -15,7 +15,9 @@ class DetailsCocktailViewController: UIViewController {
     @IBOutlet weak var tableIngredient: UITableView!
     @IBOutlet weak var instructionCocktail: UILabel!
     @IBOutlet weak var nomCocktail: UILabel!
-    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var alchool: UILabel!
+    @IBOutlet weak var typeVerre: UILabel!
+    @IBOutlet weak var category: UILabel!
     
     var detailsCocktail:Cocktail?
     
@@ -71,10 +73,14 @@ class DetailsCocktailViewController: UIViewController {
         super.viewWillAppear(animated)
         print(detailsCocktail?.strDrink)
 
-        nomCocktail.text = detailsCocktail?.strDrink
+        nomCocktail.text = "Nom du cocktail : "+(detailsCocktail?.strDrink ?? "")
         let url = URL(string: detailsCocktail?.strDrinkThumb ?? "")
         //        imageCocktail.kf.setImage(with: url)
         imageDuCocktails.sd_setImage(with: url)
+        typeVerre.text = "Type de verre : "+(detailsCocktail?.strGlass ?? "")
+        alchool.text = " Alchool : "+(detailsCocktail?.strAlcoholic ?? "")
+        category.text = " Catégorie : "+(detailsCocktail?.strCategory ?? "")
+        instructionCocktail.text = detailsCocktail?.strInstructions
         
     }
 }

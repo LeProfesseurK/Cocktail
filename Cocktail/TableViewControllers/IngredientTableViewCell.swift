@@ -24,6 +24,11 @@ class IngredientTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     /*
+    func remplirCellule(avecCocktail cocktail:Cocktail) {
+        ingredientMesure.text = cocktail.strDrink
+ 
+    }*/
+    /*
 	"idDrink":"15997"
     "strDrink":"GG"
     "strCategory":"Ordinary Drink"
